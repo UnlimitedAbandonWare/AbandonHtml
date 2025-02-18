@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폰트 단위 예제 및 창발적 응용</title>
+  <style>
+    /* px: 고정 픽셀 크기 */
+    .font-px {
+      font-size: 16px;
+    }
+    
+    /* em: 부모 요소의 폰트 크기를 기준 (예를 들어, 부모가 16px이면 1.5em은 24px) */
+    .font-em {
+      font-size: 1.5em;
+    }
+    
+    /* rem: 루트 요소(html)의 폰트 크기를 기준 (보통 기본값 16px) */
+    .font-rem {
+      font-size: 1.2rem;
+    }
+    
+    /* vw: 뷰포트 너비의 비율 (예를 들어, 5vw는 뷰포트 너비의 5%) */
+    .font-vw {
+      font-size: 5vw;
+    }
+    
+    /* 부모 요소의 폰트 사이즈 설정 (em 테스트를 위해) */
+    .parent {
+      font-size: 16px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    
+    /* 창발적 응용 박스 스타일 */
+    .박스1 {
+      border: 2px solid #333;
+      padding: 20px;
+      margin: 20px;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .박스1:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* 버튼과 출력 영역 스타일 */
+    .button-container {
+      margin: 20px;
+      text-align: center;
+    }
+    
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    /* pressed 효과: 박스를 살짝 눌린 효과로 표현 */
+    .pressed {
+      transform: scale(0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <p class="font-px">이 텍스트는 16px 크기입니다. (px 단위)</p>
+  
+  <div class="parent">
+    <p class="font-em">부모의 폰트 크기를 기준으로 1.5em 크기입니다. (em 단위)</p>
+  </div>
+  
+  <p class="font-rem">루트 기준 1.2rem 크기입니다. (rem 단위)</p>
+  
+  <p class="font-vw">이 텍스트는 뷰포트 너비의 5% 만큼 크기가 지정되었습니다. (vw 단위)</p>
+  
+  <!-- 창발적 응용: 박스1 div 3개 추가 -->
+  <div class="박스1">
+    <p>창발적 응용 - 박스 1</p>
+  </div>
+  <div class="박스1">
+    <p>창발적 응용 - 박스 2</p>
+  </div>
+  <div class="박스1">
+    <p>창발적 응용 - 박스 3</p>
+  </div>
+  
+  <!-- 버튼 추가 -->
+  <div class="button-container">
+    <button id="btn1">버튼 1</button>
+    <button id="btn2">버튼 2</button>
+    <button id="btn3">버튼 3</button>
+  </div>
+  
+  <!-- 자바스크립트: 각 버튼 클릭 시 해당 박스에 눌린(pressed) 효과 적용 -->
+  <script>
+    // 버튼 1 클릭 시 첫 번째 박스에 효과 적용
+    document.getElementById('btn1').addEventListener('click', function() {
+      const box1 = document.getElementsByClassName('박스1')[0];
+      box1.classList.add('pressed');
+      setTimeout(() => {
+        box1.classList.remove('pressed');
+      }, 200); // 200ms 후 효과 제거
+    });
+    
+    // 버튼 2 클릭 시 두 번째 박스에 효과 적용
+    document.getElementById('btn2').addEventListener('click', function() {
+      const box2 = document.getElementsByClassName('박스1')[1];
+      box2.classList.add('pressed');
+      setTimeout(() => {
+        box2.classList.remove('pressed');
+      }, 200);
+    });
+    
+    // 버튼 3 클릭 시 세 번째 박스에 효과 적용
+    document.getElementById('btn3').addEventListener('click', function() {
+      const box3 = document.getElementsByClassName('박스1')[2];
+      box3.classList.add('pressed');
+      setTimeout(() => {
+        box3.classList.remove('pressed');
+      }, 200);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이동 네비게이션</title>
+    <style>
+        /* 페이지 전체 배경을 bg1.jpg로 설정 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: url("img/bg1.jpg") no-repeat center center;
+            background-size: cover; /* 화면 전체에 맞춰 배경을 늘리거나 줄임 */
+        }
+
+        /* 구름 이미지를 화면 위에 띄우는 예시 */
+        .cloud {
+            position: absolute;
+            top: 50px;     /* 구름 배치 위치 조정 */
+            left: 50px;
+            width: 100px;  /* 필요에 따라 크기 조정 */
+            z-index: 10;   /* 다른 요소보다 위에 표시되도록 */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .box-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 2px;
+        }
+        .content {
+            padding: 5px;
+            border: 1px solid red;
+            background-color: lightblue;
+            font-size: 10px;
+            text-align: center;
+            width: 80px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* box2 버튼에 rabbit.png 이미지를 배경으로 적용 */
+        #box2 {
+            /* text-indent로 텍스트 가려주거나, 필요하면 span 태그를 별도로 사용해도 됨 */
+            background: url("img/rabbit.png") no-repeat center center;
+            background-size: contain; /* 또는 cover, auto 등으로 조정 가능 */
+            color: transparent;       /* 텍스트가 겹치지 않도록 글자색 투명화 */
+        }
+    </style>
+    <script>
+        function changeText(boxId) {
+            resetBoxes();
+            document.getElementById(boxId).innerText = boxId.toUpperCase() + " 길로 이동했습니다";
+            /* box2의 경우 이미지를 배경으로 쓰고 있어 글자가 배경과 겹칠 수 있으니
+               필요하면 스타일 조정(예: color 등) */
+            if (boxId === "box2") {
+                document.getElementById(boxId).style.color = "#fff";
+            }
+        }
+
+        function resetBoxes() {
+            for (let i = 1; i <= 36; i++) {
+                const box = document.getElementById("box" + i);
+                if (box) {
+                    box.innerText = "박스 " + i + " 내용";
+                    box.style.color = "#000"; // 기본 글자색
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 구름 이미지를 띄울 요소 -->
+    <img src="img/cloud.png" alt="cloud" class="cloud" />
+
+    <div class="container">
+        <div class="box-wrapper">
+            <button class="content" id="box1" onclick="changeText('box1')">박스 1 내용</button>
+            <!-- 여기에 rabbit.png가 배경으로 적용됩니다 -->
+            <button class="content" id="box2" onclick="changeText('box2')">박스 2 내용</button>
+            <button class="content" id="box3" onclick="changeText('box3')">박스 3 내용</button>
+            <button class="content" id="box4" onclick="changeText('box4')">박스 4 내용</button>
+        </div>
+        <div class="box-wrapper">
+            <button class="content" id="box5" onclick="changeText('box5')">박스 5 내용</button>
+            <button class="content" id="box6" onclick="changeText('box6')">박스 6 내용</button>
+            <button class="content" id="box7" onclick="changeText('box7')">박스 7 내용</button>
+            <button class="content" id="box8" onclick="changeText('box8')">박스 8 내용</button>
+        </div>
+        <!-- 필요하다면 아래처럼 box9~box36도 추가하시면 됩니다. -->
+    </div>
+</body>
+</html>

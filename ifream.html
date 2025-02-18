@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>유튜브 영상 선택</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .video-button {
+      cursor: pointer;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background: #007BFF;
+      color: #fff;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .video-button:hover {
+      background: #0056b3;
+    }
+
+    .video-iframe {
+      width: 560px;
+      height: 315px;
+      border: none;
+      background: #000;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .video-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease;
+      transform-origin: center;
+    }
+
+    .video-inner.butterfly {
+      transform: rotateY(360deg);
+    }
+  </style>
+</head>
+<body onload="initializeVideo()">
+
+  <div class="intro-text">
+    유튜브 사이트를 소개합니다. 아래 버튼을 눌러 다양한 영상을 시청하세요!
+  </div>
+
+  <div class="button-container">
+    <button class="video-button" onclick="changeVideo('4viQYUsvSls')">영상 1</button>
+    <button class="video-button" onclick="changeVideo('UEvnj1bhaxI', 511)">영상 2</button>
+    <button class="video-button" onclick="changeVideo('-ytGTuL21ZQ', 28)">영상 3</button>
+    <button class="video-button" onclick="changeVideo('xPOWmPxcbmY')">영상 4</button>
+  </div>
+
+  <div id="videoFrameWrapper" class="video-iframe">
+    <div id="videoInner" class="video-inner">
+      <iframe id="videoFrame" 
+              allowfullscreen 
+              style="width: 100%; height: 100%;">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function initializeVideo() {
+      changeVideo('4viQYUsvSls');
+    }
+
+    function changeVideo(videoId, startTime = 0) {
+      const videoFrame = document.getElementById('videoFrame');
+      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startTime}`;
+    }
+
+    const videoWrapper = document.getElementById('videoFrameWrapper');
+    const videoInner = document.getElementById('videoInner');
+
+    videoWrapper.addEventListener('click', () => {
+      videoInner.classList.remove('butterfly');
+      void videoInner.offsetWidth;
+      videoInner.classList.add('butterfly');
+    });
+  </script>
+</body>
+</html>
