@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>포지션 다양한 예제</title>
+  <style>
+    /* 1. 절대 위치 지정 */
+    .absolute {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #f8d7da;
+      padding: 10px;
+    }
+    /* 2. 상대 위치 지정 */
+    .relative {
+      position: relative;
+      top: 10px;
+      background-color: #d1ecf1;
+      padding: 10px;
+    }
+    /* 3. 기본(static) 위치 (명시적으로 지정) */
+    .static {
+      position: static;
+      background-color: #e2e3e5;
+      padding: 10px;
+    }
+    /* 4. 고정(fixed) 위치 */
+    .fixed {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #cce5ff;
+      padding: 10px;
+      z-index: 1000;
+    }
+    /* 5. 스티키(sticky) 위치 */
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color: #d4edda;
+      padding: 10px;
+    }
+    
+    /* 기타 기존 스타일 */
+    .center-text { text-align: center; }
+    .bold { font-weight: bold; }
+    .italic { font-style: italic; }
+    .underline { text-decoration: underline; }
+    .colored { color: blue; }
+    .bg-yellow { background-color: yellow; }
+    .bordered { border: 2px solid red; }
+    .rounded { border: 2px solid green; border-radius: 8px; padding: 5px; }
+    .shadow { box-shadow: 3px 3px 5px grey; padding: 10px; }
+    .large-font { font-size: 24px; }
+    .small-font { font-size: 12px; }
+    .monospace { font-family: "Courier New", Courier, monospace; }
+    .underline-dotted { text-decoration: underline dotted; }
+    .line-through { text-decoration: line-through; }
+    .overline { text-decoration: overline; }
+    .letter-spacing { letter-spacing: 2px; }
+    .word-spacing { word-spacing: 5px; }
+    .margin { margin: 20px; }
+    .padding { padding: 20px; }
+    
+    /* 포지션 응용 예제: 상대 위치 컨테이너 내부의 절대 위치 요소 */
+    .relative-container {
+      position: relative;
+      background-color: #f0f0f0;
+      border: 1px dashed #333;
+      padding: 20px;
+      margin: 50px 0;
+      height: 150px;
+    }
+    .absolute-child {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #ffeeba;
+      padding: 5px;
+      border: 1px solid #ffc107;
+    }
+    
+    /* 스크롤 시 확인할 수 있도록 여유 공간 추가 */
+    .scroll-content {
+      height: 1500px;
+    }
+    
+    /* 고정 헤더와 스티키 요소가 다른 콘텐츠와 겹치지 않도록 여백 추가 */
+    body {
+      padding-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 고정 헤더: fixed -->
+  <p class="fixed bold">고정 헤더: 스크롤해도 이 텍스트는 우측 상단에 고정됩니다.</p>
+  
+  <!-- 포지션 응용: 상대 위치 컨테이너 내부의 절대 위치 요소 -->
+  <div class="relative-container">
+    <p class="static">이 컨테이너는 상대 위치(relative)를 가지며,</p>
+    <p class="absolute-child">이 텍스트는 컨테이너 내부에 절대 위치(absolute)로 배치됩니다.</p>
+  </div>
+  
+  <!-- 스크롤 시 상단에 붙는 스티키 요소 -->
+  <p class="sticky bold">스크롤 시 상단에 고정되는 스티키(sticky) 요소입니다.</p>
+  
+  <!-- 기타 p 태그 예제들 -->
+  <p class="absolute">이 p 태그는 절대 위치(absolute)를 사용합니다.</p>
+  <p class="relative">이 p 태그는 상대 위치(relative)를 사용합니다.</p>
+  <p class="static">이 p 태그는 기본(static) 위치를 사용합니다.</p>
+  <p class="center-text">이 텍스트는 가운데 정렬되어 있습니다.</p>
+  <p class="bold">굵은 글씨 예제입니다.</p>
+  <p class="italic">이탤릭(기울임) 글씨 예제입니다.</p>
+  <p class="underline">밑줄이 있는 텍스트 예제입니다.</p>
+  <p class="colored">파란색 텍스트 예제입니다.</p>
+  <p class="bg-yellow">노란색 배경이 적용된 텍스트입니다.</p>
+  <p class="bordered">빨간 테두리가 적용된 텍스트입니다.</p>
+  <p class="rounded">초록 테두리와 둥근 모서리가 적용된 텍스트입니다.</p>
+  <p class="shadow">그림자 효과가 적용된 텍스트입니다.</p>
+  <p class="large-font">큰 글씨 예제입니다.</p>
+  <p class="small-font">작은 글씨 예제입니다.</p>
+  <p class="monospace">모노스페이스 폰트 예제입니다.</p>
+  <p class="underline-dotted">점선 밑줄이 적용된 텍스트입니다.</p>
+  <p class="line-through">취소선이 적용된 텍스트입니다.</p>
+  <p class="overline">위쪽 밑줄이 적용된 텍스트입니다.</p>
+  <p class="letter-spacing">글자 간격이 확대된 텍스트입니다.</p>
+  <p class="word-spacing">단어 간격이 확대된 텍스트입니다.</p>
+  <p class="margin">외부 여백(margin)이 적용된 텍스트입니다.</p>
+  <p class="padding">내부 여백(padding)이 적용된 텍스트입니다.</p>
+  
+  <!-- 스크롤 테스트용 추가 콘텐츠 -->
+  <div class="scroll-content"></div>
+</body>
+</html>

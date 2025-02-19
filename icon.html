@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Material 아이콘 - 모두 다르게!</title>
+  
+  <!-- Google Material Icons 링크 -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <style>
+    /* 기본 레이아웃 및 그리드 설정 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .icon-item {
+      text-align: center;
+      /* 기본 컨테이너 스타일 (개별 스타일은 아래에서 재정의) */
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      /* fadeIn 애니메이션 */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .icon-label {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+      display: block;
+    }
+    /* 반응형: 화면 작아지면 아이콘, 라벨 크기 축소 */
+    @media (max-width: 600px) {
+      .icon-item .material-icons {
+        font-size: 30px !important;
+      }
+      .icon-label {
+        font-size: 10px;
+      }
+    }
+    
+    /* === 각 컨테이너 박스별 고유 스타일 (총 40개) === */
+    .icon-grid .icon-item:nth-child(1) {
+      background: linear-gradient(135deg, #f0f8ff, #e0ffff);
+      border: 3px dashed #e6194b;
+      border-radius: 5px;
+      padding: 15px;
+      transform: rotate(2deg);
+    }
+    .icon-grid .icon-item:nth-child(2) {
+      background: #faf0e6;
+      border: 2px solid #3cb44b;
+      border-radius: 10px;
+      padding: 20px;
+      transform: rotate(-3deg);
+    }
+    .icon-grid .icon-item:nth-child(3) {
+      background: #fffacd;
+      border: 3px dotted #ffe119;
+      border-radius: 15px;
+      padding: 12px;
+      transform: rotate(5deg);
+    }
+    .icon-grid .icon-item:nth-child(4) {
+      background: #e6f7ff;
+      border: 4px double #0082c8;
+      border-radius: 8px;
+      padding: 18px;
+      transform: rotate(-2deg);
+    }
+    .icon-grid .icon-item:nth-child(5) {
+      background: #fff5ee;
+      border: 3px solid #f58231;
+      border-radius: 20px;
+      padding: 10px;
+      transform: rotate(4deg);
+    }
+    .icon-grid .icon-item:nth-child(6) {
+      background: #f0fff0;
+      border: 2px dashed #911eb4;
+      border-radius: 12px;
+      padding: 22px;
+      transform: rotate(-4deg);
+    }
+    .icon-grid .icon-item:nth-child(7) {
+      background: #f5fffa;
+      border: 3px dotted #46f0f0;
+      border-radius: 7px;
+      padding: 16px;
+      transform: rotate(3deg);
+    }
+    .icon-grid .icon-item:nth-child(8) {
+      background: #fff0f5;
+      border: 4px solid #f032e6;
+      border-radius: 10px;
+      padding: 14px;
+      transform: rotate(-6deg);
+    }
+    .icon-grid .icon-item:nth-child(9) {
+      background: #fdfd96;
+      border: 2px double #d2f53c;
+      border-radius: 5px;
+      padding: 19px;
+      transform: rotate(6deg);
+    }
+    .icon-grid .icon-item:nth-child(10) {
+      background: #ffe4e1;
+      border: 3px dashed #fabebe;
+      border-radius: 18px;
+      padding: 17px;
+      transform: rotate(-1deg);
+    }
+    .icon-grid .icon-item:nth-child(11) {
+      background: #e0ffff;
+      border: 2px dotted #008080;
+      border-radius: 12px;
+      padding: 15px;
+      transform: rotate(7deg);
+    }
+    .icon-grid .icon-item:nth-child(12) {
+      background: #fafad2;
+      border: 4px solid #e6beff;
+      border-radius: 14px;
+      padding: 13px;
+      transform: rotate(-8deg);
+    }
+    .icon-grid .icon-item:nth-child(13) {
+      background: #fff8dc;
+      border: 3px double #aa6e28;
+      border-radius: 10px;
+      padding: 20px;
+      transform: rotate(2deg);
+    }
+    .icon-grid .icon-item:nth-child(14) {
+      background: #f0e68c;
+      border: 2px dashed #fffac8;
+      border-radius: 18px;
+      padding: 12px;
+      transform: rotate(-3deg);
+    }
+    .icon-grid .icon-item:nth-child(15) {
+      background: #f5deb3;
+      border: 3px dotted #800000;
+      border-radius: 22px;
+      padding: 10px;
+      transform: rotate(4deg);
+    }
+    .icon-grid .icon-item:nth-child(16) {
+      background: #e6e6fa;
+      border: 4px solid #aaffc3;
+      border-radius: 8px;
+      padding: 18px;
+      transform: rotate(-2deg);
+    }
+    .icon-grid .icon-item:nth-child(17) {
+      background: #ffe4b5;
+      border: 2px dashed #808000;
+      border-radius: 10px;
+      padding: 16px;
+      transform: rotate(3deg);
+    }
+    .icon-grid .icon-item:nth-child(18) {
+      background: #f0fff0;
+      border: 3px dotted #ffd8b1;
+      border-radius: 15px;
+      padding: 14px;
+      transform: rotate(-5deg);
+    }
+    .icon-grid .icon-item:nth-child(19) {
+      background: #faf0e6;
+      border: 2px solid #000075;
+      border-radius: 12px;
+      padding: 17px;
+      transform: rotate(6deg);
+    }
+    .icon-grid .icon-item:nth-child(20) {
+      background: #fffacd;
+      border: 3px dashed #808080;
+      border-radius: 8px;
+      padding: 20px;
+      transform: rotate(-4deg);
+    }
+    .icon-grid .icon-item:nth-child(21) {
+      background: #f0f8ff;
+      border: 2px dotted #fabed4;
+      border-radius: 10px;
+      padding: 15px;
+      transform: rotate(5deg);
+    }
+    .icon-grid .icon-item:nth-child(22) {
+      background: #e0ffff;
+      border: 4px solid #ff7f00;
+      border-radius: 14px;
+      padding: 12px;
+      transform: rotate(-6deg);
+    }
+    .icon-grid .icon-item:nth-child(23) {
+      background: #f5f5dc;
+      border: 3px double #1abc9c;
+      border-radius: 18px;
+      padding: 10px;
+      transform: rotate(3deg);
+    }
+    .icon-grid .icon-item:nth-child(24) {
+      background: #faf0e6;
+      border: 2px dashed #9b59b6;
+      border-radius: 12px;
+      padding: 20px;
+      transform: rotate(-2deg);
+    }
+    .icon-grid .icon-item:nth-child(25) {
+      background: #fffaf0;
+      border: 3px dotted #e74c3c;
+      border-radius: 16px;
+      padding: 14px;
+      transform: rotate(7deg);
+    }
+    .icon-grid .icon-item:nth-child(26) {
+      background: #f0fff0;
+      border: 4px solid #2ecc71;
+      border-radius: 10px;
+      padding: 18px;
+      transform: rotate(-3deg);
+    }
+    .icon-grid .icon-item:nth-child(27) {
+      background: #f0f8ff;
+      border: 2px dashed #3498db;
+      border-radius: 20px;
+      padding: 12px;
+      transform: rotate(4deg);
+    }
+    .icon-grid .icon-item:nth-child(28) {
+      background: #fff0f5;
+      border: 3px dotted #f1c40f;
+      border-radius: 15px;
+      padding: 16px;
+      transform: rotate(-5deg);
+    }
+    .icon-grid .icon-item:nth-child(29) {
+      background: #fdfd96;
+      border: 2px solid #e67e22;
+      border-radius: 8px;
+      padding: 20px;
+      transform: rotate(6deg);
+    }
+    .icon-grid .icon-item:nth-child(30) {
+      background: #ffe4e1;
+      border: 3px dashed #95a5a6;
+      border-radius: 10px;
+      padding: 14px;
+      transform: rotate(-3deg);
+    }
+    .icon-grid .icon-item:nth-child(31) {
+      background: #e6f7ff;
+      border: 2px dotted #16a085;
+      border-radius: 12px;
+      padding: 18px;
+      transform: rotate(5deg);
+    }
+    .icon-grid .icon-item:nth-child(32) {
+      background: #fffacd;
+      border: 3px solid #27ae60;
+      border-radius: 14px;
+      padding: 10px;
+      transform: rotate(-4deg);
+    }
+    .icon-grid .icon-item:nth-child(33) {
+      background: #fafad2;
+      border: 4px dashed #2980b9;
+      border-radius: 8px;
+      padding: 20px;
+      transform: rotate(3deg);
+    }
+    .icon-grid .icon-item:nth-child(34) {
+      background: #fffaf0;
+      border: 2px dotted #8e44ad;
+      border-radius: 16px;
+      padding: 15px;
+      transform: rotate(-2deg);
+    }
+    .icon-grid .icon-item:nth-child(35) {
+      background: #f5f5dc;
+      border: 3px solid #2c3e50;
+      border-radius: 12px;
+      padding: 18px;
+      transform: rotate(7deg);
+    }
+    .icon-grid .icon-item:nth-child(36) {
+      background: #e0ffff;
+      border: 2px dashed #f39c12;
+      border-radius: 10px;
+      padding: 16px;
+      transform: rotate(-5deg);
+    }
+    .icon-grid .icon-item:nth-child(37) {
+      background: #fffacd;
+      border: 3px dotted #d35400;
+      border-radius: 14px;
+      padding: 12px;
+      transform: rotate(4deg);
+    }
+    .icon-grid .icon-item:nth-child(38) {
+      background: #faf0e6;
+      border: 4px solid #c0392b;
+      border-radius: 18px;
+      padding: 20px;
+      transform: rotate(-3deg);
+    }
+    .icon-grid .icon-item:nth-child(39) {
+      background: #fffaf0;
+      border: 2px dashed #bdc3c7;
+      border-radius: 8px;
+      padding: 14px;
+      transform: rotate(6deg);
+    }
+    .icon-grid .icon-item:nth-child(40) {
+      background: #fdfd96;
+      border: 3px dotted #7f8c8d;
+      border-radius: 12px;
+      padding: 16px;
+      transform: rotate(-4deg);
+    }
+    
+    /* === 각 아이콘의 고유 스타일 (총 40개) === */
+    /* 1번 */
+    .icon-grid .icon-item:nth-child(1) .material-icons {
+      font-size: 40px;
+      color: #e6194b;
+      transform: rotate(10deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(1):hover .material-icons {
+      transform: rotate(25deg) scale(1.2);
+    }
+    /* 2번 */
+    .icon-grid .icon-item:nth-child(2) .material-icons {
+      font-size: 45px;
+      color: #3cb44b;
+      transform: rotate(-15deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(2):hover .material-icons {
+      transform: rotate(-30deg) scale(1.1);
+    }
+    /* 3번 */
+    .icon-grid .icon-item:nth-child(3) .material-icons {
+      font-size: 50px;
+      color: #ffe119;
+      transform: rotate(20deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(3):hover .material-icons {
+      transform: rotate(35deg) scale(1.3);
+    }
+    /* 4번 */
+    .icon-grid .icon-item:nth-child(4) .material-icons {
+      font-size: 55px;
+      color: #0082c8;
+      transform: rotate(-30deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(4):hover .material-icons {
+      transform: rotate(-45deg) scale(1.2);
+    }
+    /* 5번 */
+    .icon-grid .icon-item:nth-child(5) .material-icons {
+      font-size: 60px;
+      color: #f58231;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(5):hover .material-icons {
+      transform: rotate(60deg) scale(1.4);
+    }
+    /* 6번 */
+    .icon-grid .icon-item:nth-child(6) .material-icons {
+      font-size: 35px;
+      color: #911eb4;
+      transform: rotate(-5deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(6):hover .material-icons {
+      transform: rotate(10deg) scale(1.2);
+    }
+    /* 7번 */
+    .icon-grid .icon-item:nth-child(7) .material-icons {
+      font-size: 65px;
+      color: #46f0f0;
+      transform: rotate(75deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(7):hover .material-icons {
+      transform: rotate(90deg) scale(1.1);
+    }
+    /* 8번 */
+    .icon-grid .icon-item:nth-child(8) .material-icons {
+      font-size: 70px;
+      color: #f032e6;
+      transform: rotate(-90deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(8):hover .material-icons {
+      transform: rotate(-105deg) scale(1.2);
+    }
+    /* 9번 */
+    .icon-grid .icon-item:nth-child(9) .material-icons {
+      font-size: 30px;
+      color: #d2f53c;
+      transform: rotate(5deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(9):hover .material-icons {
+      transform: rotate(20deg) scale(1.3);
+    }
+    /* 10번 */
+    .icon-grid .icon-item:nth-child(10) .material-icons {
+      font-size: 80px;
+      color: #fabebe;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(10):hover .material-icons {
+      transform: rotate(-60deg) scale(1.2);
+    }
+    /* 11번 */
+    .icon-grid .icon-item:nth-child(11) .material-icons {
+      font-size: 42px;
+      color: #008080;
+      transform: rotate(33deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(11):hover .material-icons {
+      transform: rotate(48deg) scale(1.2);
+    }
+    /* 12번 */
+    .icon-grid .icon-item:nth-child(12) .material-icons {
+      font-size: 38px;
+      color: #e6beff;
+      transform: rotate(-60deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(12):hover .material-icons {
+      transform: rotate(-75deg) scale(1.2);
+    }
+    /* 13번 */
+    .icon-grid .icon-item:nth-child(13) .material-icons {
+      font-size: 47px;
+      color: #aa6e28;
+      transform: rotate(10deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(13):hover .material-icons {
+      transform: rotate(25deg) scale(1.2);
+    }
+    /* 14번 */
+    .icon-grid .icon-item:nth-child(14) .material-icons {
+      font-size: 53px;
+      color: #fffac8;
+      transform: rotate(15deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(14):hover .material-icons {
+      transform: rotate(30deg) scale(1.3);
+    }
+    /* 15번 */
+    .icon-grid .icon-item:nth-child(15) .material-icons {
+      font-size: 37px;
+      color: #800000;
+      transform: rotate(-25deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(15):hover .material-icons {
+      transform: rotate(-40deg) scale(1.2);
+    }
+    /* 16번 */
+    .icon-grid .icon-item:nth-child(16) .material-icons {
+      font-size: 76px;
+      color: #aaffc3;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(16):hover .material-icons {
+      transform: rotate(105deg) scale(1.1);
+    }
+    /* 17번 */
+    .icon-grid .icon-item:nth-child(17) .material-icons {
+      font-size: 44px;
+      color: #808000;
+      transform: rotate(-35deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(17):hover .material-icons {
+      transform: rotate(-50deg) scale(1.3);
+    }
+    /* 18번 */
+    .icon-grid .icon-item:nth-child(18) .material-icons {
+      font-size: 59px;
+      color: #ffd8b1;
+      transform: rotate(5deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(18):hover .material-icons {
+      transform: rotate(20deg) scale(1.2);
+    }
+    /* 19번 */
+    .icon-grid .icon-item:nth-child(19) .material-icons {
+      font-size: 49px;
+      color: #000075;
+      transform: rotate(-10deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(19):hover .material-icons {
+      transform: rotate(-25deg) scale(1.2);
+    }
+    /* 20번 */
+    .icon-grid .icon-item:nth-child(20) .material-icons {
+      font-size: 64px;
+      color: #808080;
+      transform: rotate(25deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(20):hover .material-icons {
+      transform: rotate(40deg) scale(1.3);
+    }
+    /* 21번 */
+    .icon-grid .icon-item:nth-child(21) .material-icons {
+      font-size: 36px;
+      color: #fabed4;
+      transform: rotate(-20deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(21):hover .material-icons {
+      transform: rotate(-35deg) scale(1.2);
+    }
+    /* 22번 */
+    .icon-grid .icon-item:nth-child(22) .material-icons {
+      font-size: 68px;
+      color: #ff7f00;
+      transform: rotate(30deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(22):hover .material-icons {
+      transform: rotate(45deg) scale(1.3);
+    }
+    /* 23번 */
+    .icon-grid .icon-item:nth-child(23) .material-icons {
+      font-size: 51px;
+      color: #1abc9c;
+      transform: rotate(-12deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(23):hover .material-icons {
+      transform: rotate(-27deg) scale(1.2);
+    }
+    /* 24번 */
+    .icon-grid .icon-item:nth-child(24) .material-icons {
+      font-size: 72px;
+      color: #9b59b6;
+      transform: rotate(47deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(24):hover .material-icons {
+      transform: rotate(62deg) scale(1.2);
+    }
+    /* 25번 */
+    .icon-grid .icon-item:nth-child(25) .material-icons {
+      font-size: 39px;
+      color: #e74c3c;
+      transform: rotate(-47deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(25):hover .material-icons {
+      transform: rotate(-62deg) scale(1.3);
+    }
+    /* 26번 */
+    .icon-grid .icon-item:nth-child(26) .material-icons {
+      font-size: 66px;
+      color: #2ecc71;
+      transform: rotate(22deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(26):hover .material-icons {
+      transform: rotate(37deg) scale(1.2);
+    }
+    /* 27번 */
+    .icon-grid .icon-item:nth-child(27) .material-icons {
+      font-size: 55px;
+      color: #3498db;
+      transform: rotate(-22deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(27):hover .material-icons {
+      transform: rotate(-37deg) scale(1.3);
+    }
+    /* 28번 */
+    .icon-grid .icon-item:nth-child(28) .material-icons {
+      font-size: 61px;
+      color: #f1c40f;
+      transform: rotate(33deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(28):hover .material-icons {
+      transform: rotate(48deg) scale(1.2);
+    }
+    /* 29번 */
+    .icon-grid .icon-item:nth-child(29) .material-icons {
+      font-size: 48px;
+      color: #e67e22;
+      transform: rotate(-33deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(29):hover .material-icons {
+      transform: rotate(-48deg) scale(1.3);
+    }
+    /* 30번 */
+    .icon-grid .icon-item:nth-child(30) .material-icons {
+      font-size: 75px;
+      color: #95a5a6;
+      transform: rotate(18deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(30):hover .material-icons {
+      transform: rotate(33deg) scale(1.2);
+    }
+    /* 31번 */
+    .icon-grid .icon-item:nth-child(31) .material-icons {
+      font-size: 41px;
+      color: #16a085;
+      transform: rotate(-18deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(31):hover .material-icons {
+      transform: rotate(-33deg) scale(1.3);
+    }
+    /* 32번 */
+    .icon-grid .icon-item:nth-child(32) .material-icons {
+      font-size: 57px;
+      color: #27ae60;
+      transform: rotate(27deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(32):hover .material-icons {
+      transform: rotate(42deg) scale(1.2);
+    }
+    /* 33번 */
+    .icon-grid .icon-item:nth-child(33) .material-icons {
+      font-size: 63px;
+      color: #2980b9;
+      transform: rotate(-27deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(33):hover .material-icons {
+      transform: rotate(-42deg) scale(1.3);
+    }
+    /* 34번 */
+    .icon-grid .icon-item:nth-child(34) .material-icons {
+      font-size: 46px;
+      color: #8e44ad;
+      transform: rotate(40deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(34):hover .material-icons {
+      transform: rotate(55deg) scale(1.2);
+    }
+    /* 35번 */
+    .icon-grid .icon-item:nth-child(35) .material-icons {
+      font-size: 69px;
+      color: #2c3e50;
+      transform: rotate(-40deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(35):hover .material-icons {
+      transform: rotate(-55deg) scale(1.3);
+    }
+    /* 36번 */
+    .icon-grid .icon-item:nth-child(36) .material-icons {
+      font-size: 52px;
+      color: #f39c12;
+      transform: rotate(12deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(36):hover .material-icons {
+      transform: rotate(27deg) scale(1.2);
+    }
+    /* 37번 */
+    .icon-grid .icon-item:nth-child(37) .material-icons {
+      font-size: 60px;
+      color: #d35400;
+      transform: rotate(-12deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(37):hover .material-icons {
+      transform: rotate(-27deg) scale(1.3);
+    }
+    /* 38번 */
+    .icon-grid .icon-item:nth-child(38) .material-icons {
+      font-size: 43px;
+      color: #c0392b;
+      transform: rotate(60deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(38):hover .material-icons {
+      transform: rotate(75deg) scale(1.2);
+    }
+    /* 39번 */
+    .icon-grid .icon-item:nth-child(39) .material-icons {
+      font-size: 67px;
+      color: #bdc3c7;
+      transform: rotate(-60deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(39):hover .material-icons {
+      transform: rotate(-75deg) scale(1.3);
+    }
+    /* 40번 */
+    .icon-grid .icon-item:nth-child(40) .material-icons {
+      font-size: 58px;
+      color: #7f8c8d;
+      transform: rotate(5deg);
+      transition: transform 0.3s ease;
+    }
+    .icon-grid .icon-item:nth-child(40):hover .material-icons {
+      transform: rotate(20deg) scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Google Material 아이콘 - 모두 다르게!</h1>
+  <div class="icon-grid">
+    <!-- 40개의 다양한 Google Material 아이콘 (라벨은 아이콘 이름) -->
+    <div class="icon-item">
+      <i class="material-icons">home</i>
+      <span class="icon-label">home</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">account_circle</i>
+      <span class="icon-label">account_circle</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">settings</i>
+      <span class="icon-label">settings</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">favorite</i>
+      <span class="icon-label">favorite</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">info</i>
+      <span class="icon-label">info</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">help</i>
+      <span class="icon-label">help</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">search</i>
+      <span class="icon-label">search</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">alarm</i>
+      <span class="icon-label">alarm</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">event</i>
+      <span class="icon-label">event</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">camera_alt</i>
+      <span class="icon-label">camera_alt</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">cloud</i>
+      <span class="icon-label">cloud</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">phone</i>
+      <span class="icon-label">phone</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">email</i>
+      <span class="icon-label">email</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">lock</i>
+      <span class="icon-label">lock</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">menu</i>
+      <span class="icon-label">menu</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">shopping_cart</i>
+      <span class="icon-label">shopping_cart</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">thumb_up</i>
+      <span class="icon-label">thumb_up</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">thumb_down</i>
+      <span class="icon-label">thumb_down</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">visibility</i>
+      <span class="icon-label">visibility</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">build</i>
+      <span class="icon-label">build</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">language</i>
+      <span class="icon-label">language</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">brightness_4</i>
+      <span class="icon-label">brightness_4</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">star</i>
+      <span class="icon-label">star</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">schedule</i>
+      <span class="icon-label">schedule</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">work</i>
+      <span class="icon-label">work</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">flight_takeoff</i>
+      <span class="icon-label">flight_takeoff</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">directions_car</i>
+      <span class="icon-label">directions_car</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">directions_bike</i>
+      <span class="icon-label">directions_bike</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">directions_bus</i>
+      <span class="icon-label">directions_bus</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">restaurant</i>
+      <span class="icon-label">restaurant</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">local_cafe</i>
+      <span class="icon-label">local_cafe</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">local_dining</i>
+      <span class="icon-label">local_dining</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">spa</i>
+      <span class="icon-label">spa</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">fitness_center</i>
+      <span class="icon-label">fitness_center</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">school</i>
+      <span class="icon-label">school</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">pets</i>
+      <span class="icon-label">pets</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">eco</i>
+      <span class="icon-label">eco</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">nature</i>
+      <span class="icon-label">nature</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">public</i>
+      <span class="icon-label">public</span>
+    </div>
+    <div class="icon-item">
+      <i class="material-icons">movie</i>
+      <span class="icon-label">movie</span>
+    </div>
+  </div>
+  
+  <p style="text-align:center; margin:20px;">
+    더 많은 아이콘은 <a href="https://material.io/resources/icons/" target="_blank">Google Material Icons</a>에서 확인할 수 있습니다.
+  </p>
+</body>
+</html>

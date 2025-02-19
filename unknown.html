@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximal Bootstrap Example</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* 기본 텍스트 스타일: 라인 하이트 50픽셀, letter-spacing 적용 */
+    .custom-text {
+      line-height: 50px;
+      letter-spacing: 3px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    /* 마우스 오버 시 변환 효과 (scale, rotate, 배경색 변화) */
+    .transform-on-hover {
+      transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+    .transform-on-hover:hover {
+      transform: scale(1.1) rotate(5deg);
+      background-color: #f8f9fa;
+    }
+
+    /* 이미지 hover 변환 효과 */
+    .img-transform {
+      transition: transform 0.4s ease;
+    }
+    .img-transform:hover {
+      transform: rotate(10deg) scale(1.05);
+    }
+
+    /* 네비게이션 바 커스텀 */
+    .custom-navbar {
+      background-color: #343a40;
+    }
+    .custom-navbar .navbar-brand,
+    .custom-navbar .nav-link {
+      color: #fff !important;
+      letter-spacing: 1px;
+    }
+
+    /* 카드 스타일 */
+    .custom-card {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    /* 섹션 패딩 */
+    .section-padding {
+      padding: 60px 0;
+    }
+
+    /* 추가 애니메이션: 스크롤 시 박스 나타나기 */
+    .animate-box {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .animate-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 바디 배경 */
+    body {
+      background-color: #e9ecef;
+    }
+
+    /* 더미 스타일 (배경색 등) */
+    .dummy-style-1 { background-color: #ffdddd; }
+    .dummy-style-2 { background-color: #ddffdd; }
+    .dummy-style-3 { background-color: #ddddff; }
+    .dummy-style-4 { background-color: #ffffdd; }
+    .dummy-style-5 { background-color: #ddffff; }
+    .dummy-style-6 { background-color: #ffddee; }
+    .dummy-style-7 { background-color: #ddeeaa; }
+    .dummy-style-8 { background-color: #aaddff; }
+    .dummy-style-9 { background-color: #ffccdd; }
+    .dummy-style-10 { background-color: #ccffdd; }
+
+    /* 그라데이션 및 여분의 여백 */
+    .filler-2 {
+      padding: 50px;
+      background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    }
+
+    /* 여분의 간격 */
+    .extra-spacing {
+      margin: 30px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    /* 커스텀 헤더 */
+    .custom-header {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    /* 푸터 스타일 */
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    /* 소셜 아이콘 */
+    .social-icons a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ffc107;
+    }
+
+    /* 버튼 애니메이션 */
+    .animated-btn {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .animated-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* 텍스트 그림자 */
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* 테이블 커스텀 스타일 */
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table.custom-table th,
+    table.custom-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    table.custom-table th {
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    /* 추가 더미 스타일 */
+    .dummy-style-11 { background-color: #ffeedd; }
+    .dummy-style-12 { background-color: #ddeeff; }
+    .dummy-style-13 { background-color: #eeddff; }
+    .dummy-style-14 { background-color: #ddeecc; }
+    .dummy-style-15 { background-color: #ccddee; }
+
+    /* 플레이스홀더 박스 */
+    .placeholder {
+      background: #f1f1f1;
+      border: 1px dashed #aaa;
+      margin: 10px 0;
+      padding: 20px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* 추가 더미 텍스트 색상 */
+    .dummy-16 { color: #ff0000; }
+    .dummy-17 { color: #00ff00; }
+    .dummy-18 { color: #0000ff; }
+    .dummy-19 { color: #ff00ff; }
+    .dummy-20 { color: #00ffff; }
+
+    /* 미디어 쿼리 (반응형) */
+    @media (max-width: 768px) {
+      .custom-text {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+    }
+
+    /* 여분의 더미 CSS 줄들 (추가 스타일) */
+    .dummy-extra-1 { background-color: #f0f0f0; }
+    .dummy-extra-2 { background-color: #e0e0e0; }
+    .dummy-extra-3 { background-color: #d0d0d0; }
+    .dummy-extra-4 { background-color: #c0c0c0; }
+    .dummy-extra-5 { background-color: #b0b0b0; }
+    .dummy-extra-6 { background-color: #a0a0a0; }
+    .dummy-extra-7 { background-color: #909090; }
+    .dummy-extra-8 { background-color: #808080; }
+    .dummy-extra-9 { background-color: #707070; }
+    .dummy-extra-10 { background-color: #606060; }
+    .dummy-extra-11 { background-color: #505050; }
+    .dummy-extra-12 { background-color: #404040; }
+    .dummy-extra-13 { background-color: #303030; }
+    .dummy-extra-14 { background-color: #202020; }
+    .dummy-extra-15 { background-color: #101010; }
+    .dummy-extra-16 { background-color: #ffefef; }
+    .dummy-extra-17 { background-color: #efefef; }
+    .dummy-extra-18 { background-color: #dfdfdf; }
+    .dummy-extra-19 { background-color: #cfcfcf; }
+    .dummy-extra-20 { background-color: #bfbfbf; }
+    .dummy-extra-21 { background-color: #afafaf; }
+    .dummy-extra-22 { background-color: #9f9f9f; }
+    .dummy-extra-23 { background-color: #8f8f8f; }
+    .dummy-extra-24 { background-color: #7f7f7f; }
+    .dummy-extra-25 { background-color: #6f6f6f; }
+  </style>
+</head>
+<body>
+  <!-- 네비게이션 바 -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <a class="navbar-brand custom-text" href="#">Maximal Example</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link custom-text" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-text" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-text" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-text" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 점보트론 섹션 -->
+  <div class="jumbotron text-center section-padding">
+    <h1 class="display-4 custom-text text-shadow transform-on-hover">Welcome to the Maximal Example</h1>
+    <p class="lead custom-text">This is a fully responsive, highly interactive example using Bootstrap, custom CSS, and JS.</p>
+    <hr class="my-4">
+    <p class="custom-text">Explore the components below to see the magic in action.</p>
+    <a class="btn btn-primary btn-lg animated-btn" href="#features" role="button">Learn more</a>
+  </div>
+
+  <!-- 코드 사이즈 속성에 대해 알아보는 섹션 -->
+  <div class="container section-padding" id="code-properties">
+    <h1 class="custom-text" style="font-size: 40px;">코드 사이즈 속성</h1>
+    <p class="custom-text">
+      이 섹션에서는 텍스트 관련 속성인 <code>font-size</code>, <code>line-height</code>, <code>letter-spacing</code> 등을 활용하여
+      텍스트의 가독성과 디자인을 조절하는 방법을 알아봅니다.
+    </p>
+    <p class="custom-text">
+      예제에서는 기본적으로 <strong>font-size: 24px</strong>, <strong>line-height: 50px</strong>, 그리고 <strong>letter-spacing: 3px</strong>가 적용되었습니다.
+      이로 인해 텍스트에 넉넉한 줄 간격과 일정한 글자 간격이 부여되어 깔끔하게 표현됩니다.
+    </p>
+    <p class="custom-text">
+      해딩원( &lt;h1&gt; ) 태그에 직접 인라인 스타일을 적용하여 크기를 대충 박아보았으며, 필요에 따라 CSS 클래스로 관리할 수도 있습니다.
+    </p>
+  </div>
+
+  <!-- Features 섹션 -->
+  <div class="container section-padding" id="features">
+    <div class="custom-header">Features</div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card custom-card transform-on-hover">
+          <img class="card-img-top img-transform" src="https://via.placeholder.com/350x150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title custom-text">Feature One</h5>
+            <p class="card-text custom-text">An example of a feature that uses custom CSS for line height and letter spacing.</p>
+            <a href="#" class="btn btn-secondary animated-btn">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card transform-on-hover">
+          <img class="card-img-top img-transform" src="https://via.placeholder.com/350x150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title custom-text">Feature Two</h5>
+            <p class="card-text custom-text">This feature includes transformation effects and smooth transitions on hover.</p>
+            <a href="#" class="btn btn-secondary animated-btn">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card transform-on-hover">
+          <img class="card-img-top img-transform" src="https://via.placeholder.com/350x150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title custom-text">Feature Three</h5>
+            <p class="card-text custom-text">Experience the full potential of Bootstrap components combined with custom animations.</p>
+            <a href="#" class="btn btn-secondary animated-btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Box Example 섹션: 예제 박스 만들고, 임의의 텍스트를 넣어 "가둬서" 표현 -->
+  <div class="container section-padding" id="box-example">
+    <div class="custom-header">Box Example</div>
+    <div class="p-4" style="border: 2px solid #ccc; background-color: #f9f9f9;">
+      <p class="custom-text">
+        This is an example box. 아무거나 넣은 텍스트입니다. 
+        이 박스는 경계선과 배경색이 적용되어 내부의 내용이 "가둬진" 효과를 줍니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- 이하 Gallery, 테이블, 모달, 푸터 등 추가 섹션들은 기존 코드와 동일하게 구성됩니다. -->
+
+  <!-- Bootstrap JS 및 jQuery, Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // 스크롤 시 애니메이션 효과 적용
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateBoxes = document.querySelectorAll('.animate-box');
+      function checkVisibility() {
+        animateBoxes.forEach(box => {
+          const rect = box.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            box.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', checkVisibility);
+      checkVisibility();
+    });
+
+    // 버튼 hover 효과
+    document.querySelectorAll('.animated-btn').forEach(button => {
+      button.addEventListener('mouseenter', function() {
+        this.style.opacity = '0.8';
+      });
+      button.addEventListener('mouseleave', function() {
+        this.style.opacity = '1';
+      });
+    });
+  </script>
+</body>
+</html>

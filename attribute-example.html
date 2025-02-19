@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Attribute Example HTML with 40+ functionalities">
+  <title>Attribute Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <base href="https://example.com/">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- 1. 헤더: id와 인라인 스타일 -->
+  <header id="main-header" style="background-color: #f0f0f0; padding: 20px;">
+    <h1 title="환영합니다!" style="color: #1abc9c;">Attribute Example Page</h1>
+    <!-- 네비게이션에 다양한 색상의 링크 추가 -->
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#section1" title="폼 섹션으로 이동" style="color: #e74c3c;">Section 1</a></li>
+        <li><a href="#section2" title="미디어 섹션으로 이동" style="color: #9b59b6;">Section 2</a></li>
+        <li><a href="#section3" title="인터랙티브 섹션으로 이동" style="color: #f39c12;">Section 3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 3. 메인 콘텐츠 영역 -->
+  <main class="content">
+    <!-- 섹션 1: 폼 요소 -->
+    <section id="section1">
+      <h2 style="color: #ff5733;">Form Elements</h2>
+      <form action="submit.php" method="post" novalidate>
+        <label for="username" style="color: #c0392b;">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        
+        <label for="email" style="color: #8e44ad;">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        
+        <label for="password" style="color: #2980b9;">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        
+        <label for="age" style="color: #27ae60;">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" step="1">
+        
+        <label style="color: #d35400;">
+          <input type="checkbox" name="subscribe" checked>
+          Subscribe to newsletter
+        </label>
+        
+        <fieldset style="color: #7f8c8d;">
+          <legend>Gender:</legend>
+          <label>
+            <input type="radio" name="gender" value="male">
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female">
+            Female
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other">
+            Other
+          </label>
+        </fieldset>
+        
+        <label for="country" style="color: #16a085;">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">Select your country</option>
+          <option value="kr">Korea</option>
+          <option value="us">USA</option>
+          <option value="jp">Japan</option>
+          <option value="cn">China</option>
+        </select>
+        
+        <label for="message" style="color: #34495e;">Message:</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." rows="4" cols="50"></textarea>
+        
+        <button type="submit" style="color: #fff; background-color: #e67e22;">Submit</button>
+      </form>
+    </section>
+
+    <!-- 섹션 2: 미디어 요소 -->
+    <section id="section2">
+      <h2 style="color: #33ff57;">Media Elements</h2>
+      <!-- 첫 번째 이미지 -->
+      <img src="image.jpg" alt="A beautiful scenery" width="300" height="200">
+      
+      <!-- figure 안에 외부 링크를 포함 -->
+      <figure>
+        <img src="figure.jpg" alt="Artistic view" width="300" height="200">
+        <figcaption style="color: #2c3e50;">
+          Artistic View
+          <div class="external-media-links" style="margin-top: 10px;">
+            <h3 style="color: #2980b9;">External Media Resource Links</h3>
+            <ul>
+              <li>네이버 이미지 예시 1: 
+                <a href="https://ssl.pstatic.net/tveta/libs/1556/1556282/201911211032.jpg" 
+                   target="_blank" style="color: #2980b9;">
+                   https://ssl.pstatic.net/tveta/libs/1556/1556282/201911211032.jpg
+                </a>
+              </li>
+              <li>네이버 이미지 예시 2: 
+                <a href="https://s.pstatic.net/static/www/img/common/default.jpg" 
+                   target="_blank" style="color: #2980b9;">
+                   https://s.pstatic.net/static/www/img/common/default.jpg
+                </a>
+              </li>
+              <!-- 유튜브 영상: 현재 창에서 열림 (target 속성 제거) -->
+              <li>유튜브 영상 예시 1: 
+                <a href="https://www.youtube.com/watch?v=mowIINdyaGg" style="color: #2980b9;">
+                  https://www.youtube.com/watch?v=mowIINdyaGg
+                </a>
+              </li>
+              <li>유튜브 영상 예시 2: 
+                <a href="https://www.youtube.com/watch?v=xoWzVbgbCdg" style="color: #2980b9;">
+                  https://www.youtube.com/watch?v=xoWzVbgbCdg
+                </a>
+              </li>
+              <li>유튜브 영상 예시 3: 
+                <a href="https://www.youtube.com/watch?v=zjjOox3XNlU" style="color: #2980b9;">
+                  https://www.youtube.com/watch?v=zjjOox3XNlU
+                </a>
+              </li>
+            </ul>
+          </div>
+        </figcaption>
+      </figure>
+      
+      <!-- 오디오, 비디오 제거하고 유튜브 임베드 삽입 -->
+      <div style="margin-top: 20px;">
+        <h3 style="color: #2980b9;">Embedded YouTube Video</h3>
+        <!-- 유튜브 '예시 1'을 임베드 예시로 활용 -->
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/mowIINdyaGg"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <!-- 아이프레임 -->
+      <iframe src="https://www.example.com" title="Example Site" width="300" height="200" frameborder="0"></iframe>
+    </section>
+
+    <!-- 섹션 3: 인터랙티브 요소 -->
+    <section id="section3">
+      <h2 style="color: #3357ff;">Interactive Elements</h2>
+      <button type="button" onclick="alert('Button clicked!')" style="color: #fff; background-color: #e74c3c;">Click Me</button>
+      
+      <details open style="color: #8e44ad;">
+        <summary>More Info</summary>
+        <p>This is additional information that can be toggled.</p>
+      </details>
+      
+      <progress value="30" max="100" style="color: #27ae60;"></progress>
+      
+      <meter value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5" style="color: #f39c12;"></meter>
+    </section>
+
+    <!-- 섹션 4: 데이터 테이블 -->
+    <section id="section4">
+      <h2 style="color: yellow;">Data Table</h2>
+      <table border="1" summary="Sample table with data">
+        <caption style="color: #1abc9c;">Sample Data</caption>
+        <thead>
+          <tr>
+            <th scope="col" style="color: #e74c3c;">#</th>
+            <th scope="col" style="color: #9b59b6;">Name</th>
+            <th scope="col" style="color: #f1c40f;">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-info="Row 1 number" style="color: #34495e;">1</td>
+            <td data-info="Row 1 name" style="color: #16a085;">Item One</td>
+            <td data-info="Row 1 value" style="color: #d35400;">100</td>
+          </tr>
+          <tr>
+            <td data-info="Row 2 number" style="color: #34495e;">2</td>
+            <td data-info="Row 2 name" style="color: #16a085;">Item Two</td>
+            <td data-info="Row 2 value" style="color: #d35400;">200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 섹션 5: 시맨틱 및 인라인 요소 -->
+    <section id="section5">
+      <h2 style="color: purple;">Semantic and Inline Elements</h2>
+      <p style="color: #2c3e50;">
+        이 문장에는 <abbr title="World Health Organization" style="color: #e67e22;">WHO</abbr> 약어와 
+        <cite title="Citation Example" style="color: #c0392b;">인용문</cite>이 포함되어 있습니다.
+      </p>
+      <blockquote cite="https://www.example.com/quote" style="color: #8e44ad;">
+        "This is a sample quote to demonstrate the blockquote element."
+      </blockquote>
+      <address style="color: #27ae60;">
+        Written by <a href="mailto:someone@example.com" style="color: #2980b9;">Someone</a>.<br>
+        Visit us at:<br>
+        123 Example Street, City, Country
+      </address>
+      <p style="color: #d35400;">Published on: <time datetime="2025-02-19" style="color: #f39c12;">February 19, 2025</time></p>
+    </section>
+
+    <!-- 섹션 6: 커스텀 데이터 속성 -->
+    <section id="section6">
+      <h2 style="color: orange;">Custom Data Attributes</h2>
+      <div id="customData" data-user="JohnDoe" data-role="admin" data-active="true" style="color: #34495e;">
+        Custom data attributes example.
+      </div>
+      <span data-info="Additional info" class="infoSpan" style="color: #16a085;">Hover over me!</span>
+    </section>
+
+    <!-- 섹션 7: 코드 샘플 -->
+    <section id="section7">
+      <h2 style="color: teal;">Code Sample</h2>
+      <pre data-language="html" style="color: #2c3e50;"><code>
+&lt;div class="sample"&gt;This is a code block.&lt;/div&gt;
+      </code></pre>
+    </section>
+
+    <!-- 섹션 8: 다양한 HTML5 요소 -->
+    <section id="section8">
+      <h2 style="color: pink;">Miscellaneous Elements</h2>
+      <p style="color: #e74c3c;">This is a <mark style="color: #f1c40f;">highlighted</mark> text.</p>
+      <p style="color: #8e44ad;"><small style="color: #7f8c8d;">Small print text here.</small></p>
+      <p style="color: #27ae60;">Water is H<sup style="color: #2980b9;">2</sup>O.</p>
+      <p style="color: #d35400;">Chemical formula: CO<sub style="color: #c0392b;">2</sub>.</p>
+    </section>
+
+    <!-- 섹션 9: 리스트 요소 -->
+    <section id="section9">
+      <h2 style="color: brown;">Lists</h2>
+      <ol reversed style="color: #16a085;">
+        <li>Step 3</li>
+        <li>Step 2</li>
+        <li>Step 1</li>
+      </ol>
+      <ul type="circle" style="color: #8e44ad;">
+        <li>Circle item 1</li>
+        <li>Circle item 2</li>
+      </ul>
+    </section>
+    
+  </main>
+
+  <!-- 41. 푸터: role와 인라인 스타일 -->
+  <footer role="contentinfo" style="text-align: center; padding: 10px; color: #95a5a6;">
+    <p>&copy; 2025 Attribute Example. All rights reserved.</p>
+  </footer>
+
+  <!-- 42. Script: async 속성 -->
+  <script async>
+    console.log('Async script loaded.');
+  </script>
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+  </script>
+</body>
+</html>

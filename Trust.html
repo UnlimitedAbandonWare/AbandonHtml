@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>통합 예시 페이지</title>
+  <!-- 구글 아이콘, 폰트어썸 등을 사용하기 위한 예시(001.html, Google Icon 사용 예시.html) -->
+  <script src="https://kit.fontawesome.com/c7e9c406fc.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 기본 스타일 초기화 */
+    * { margin:0; padding:0; box-sizing: border-box; }
+
+    /* container 레이아웃 (008.html 참고) */
+    #container {
+      width: 1160px;
+      margin: auto;
+      border: 1px solid #ccc;
+      min-height: 1500px;
+      position: relative;
+    }
+    header {
+      height: 150px;
+      background-color: beige;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    nav ul li {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #main {
+      min-height: 1200px;
+      margin-bottom: 20px;
+      border: 1px solid #666;
+      padding: 20px;
+    }
+    footer {
+      background-color: #999;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    footer p {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* (002.html) 테이블 예시 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    td {
+      padding: 1rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    /* (006.html, 007.html 등을 종합) 가운데 정렬 박스 예시 */
+    .center-box {
+      width: 300px;
+      height: 150px;
+      border: 3px solid red;
+      text-align: center;
+      display: table;
+      margin: 20px auto;
+      position: relative; /* 자식 요소 절대위치 기준 */
+    }
+    .center-box span {
+      display: table-cell;
+      vertical-align: middle;
+      border: 1px solid blue;
+    }
+
+    /* (005.html) 절대 위치 배치 예시 */
+    #absolute-container {
+      position: relative;
+      width: 80%;
+      height: 400px;
+      margin: 20px auto;
+      border: 3px solid #333;
+    }
+    #absolute-container p {
+      width: 150px;
+      height: 100px;
+      border: 1px solid red;
+      position: absolute;
+      text-align: center;
+      line-height: 100px;
+      background-color: #fafafa;
+    }
+    /* 모서리 배치 */
+    #p1 { left: 0;   top: 0; }
+    #p2 { right: 0;  top: 0; }
+    #p3 { left: 50%; top: 50%;
+          margin-left:-75px; margin-top:-50px; }
+    #p4 { left: 0;   bottom: 0; }
+    #p5 { right: 0;  bottom: 0; }
+
+    /* (003.html) hover 시 display/visibility 예시 */
+    .hover-box {
+      border: 1px solid red;
+      height: 200px;
+      margin: 20px 0;
+      position: relative;
+    }
+    .hover-box p {
+      border: 1px solid blue;
+      background-color: aquamarine;
+      display: none;  /* 기본 감춤 */
+      margin: 10px;
+      padding: 10px;
+    }
+    .hover-box section {
+      border: 1px solid yellow;
+      background-color: pink;
+      height: 70px;
+      margin: 20px;
+      visibility: hidden;  /* 기본 감춤 */
+    }
+    .hover-box:hover p {
+      display: block;      /* 마우스 올리면 표시 */
+    }
+    .hover-box:hover section {
+      visibility: visible; /* 마우스 올리면 표시 */
+    }
+
+    /* 구글 아이콘, 폰트어썸 예시 */
+    .icon-area {
+      margin: 20px 0;
+    }
+    .icon-area i, .icon-area .material-icons, .icon-area .material-symbols-outlined {
+      font-size: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .icon-area .fa-truck {
+      color: indianred;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>통합 예시 로고</h1>
+      <nav>
+        <ul>
+          <li>메뉴1</li>
+          <li>메뉴2</li>
+          <li>메뉴3</li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="main">
+      <h2>아이콘 예시</h2>
+      <!-- (001.html, Google Icon 사용 예시.html) -->
+      <div class="icon-area">
+        <!-- 폰트어썸 예시 -->
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-heart"></i>
+        <i class="fa-solid fa-truck"></i>
+        <!-- 구글 머터리얼 아이콘 -->
+        <i class="material-icons">home</i>
+        <i class="material-icons">delete</i>
+        <!-- 머터리얼 심볼 -->
+        <span class="material-symbols-outlined">
+          favorite
+        </span>
+      </div>
+
+      <h2>표(테이블) 예시</h2>
+      <!-- (002.html) -->
+      <table>
+        <tr>
+          <td>첫줄 첫칸</td>
+          <td>첫줄 두번째칸</td>
+          <td>첫줄 세번째칸</td>
+        </tr>
+        <tr>
+          <td>두번째줄 첫칸</td>
+          <td>두번째줄 두번째칸</td>
+          <td>두번째줄 세번째칸</td>
+        </tr>
+        <tr>
+          <td>세번째줄 첫칸</td>
+          <td>세번째줄 두번째칸</td>
+          <td>세번째줄 세번째칸</td>
+        </tr>
+      </table>
+
+      <h2>가운데 정렬 박스 예시</h2>
+      <!-- (006.html, 007.html 요소 일부 활용) -->
+      <div class="center-box">
+        <span>가운데 정렬된 내용</span>
+      </div>
+
+      <h2>절대 위치 예시</h2>
+      <!-- (005.html) -->
+      <div id="absolute-container">
+        <p id="p1">left/top</p>
+        <p id="p2">right/top</p>
+        <p id="p3">center/middle</p>
+        <p id="p4">left/bottom</p>
+        <p id="p5">right/bottom</p>
+      </div>
+
+      <h2>Hover 시 표시/숨김 예시</h2>
+      <!-- (003.html) -->
+      <div class="hover-box">
+        <p>마우스를 올리면 나타납니다!</p>
+        <section>이것도 숨겨져 있다가 나타납니다.</section>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Copyright 2025 All Right Reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

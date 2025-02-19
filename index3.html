@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Dw어커데미 - Windows 기본 한글 폰트 (궁서→굴림→바탕→돋움 등)</title>
+
+  <style>
+    /* 페이지 전체 스타일 */
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      /* 기본 본문 폰트: 맑은 고딕 우선 / 없으면 sans-serif */
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+    }
+
+    /* 메인 타이틀 */
+    .title {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    /* 공통 구조 */
+    .font-sample {
+      margin-bottom: 20px;
+    }
+    .glow-box {
+      display: inline-block;
+      background-color: #222;
+      color: transparent; /* 글자 안을 투명하게 해서 외곽선만 보이도록 */
+      padding: 15px;
+      transition: background-color 0.3s;
+    }
+    .glow-text {
+      /* 글자 외곽선, 빛 효과 */
+      -webkit-text-stroke: 1px var(--glow-color);
+      text-shadow:
+        0 0 3px var(--glow-color),
+        0 0 7px var(--glow-color),
+        0 0 12px var(--glow-color);
+    }
+
+    /* =========== 1) 궁서체 (Gungsuh) =========== */
+    .font1 {
+      --glow-color: #ff0000; /* 빨강 */
+    }
+    .font1:hover {
+      --glow-color: #ff4500; /* 호버 시 색상 살짝 변경 */
+    }
+    /* h2, p 모두 궁서체로 */
+    .font1 h2, .font1 p {
+      font-family: '궁서', 'Gungsuh', serif;
+    }
+    .font1 .glow-box {
+      border-radius: 0;
+    }
+    .font1 .glow-box:hover {
+      background-color: #550000;
+    }
+
+    /* =========== 2) 굴림체 (Gulim) =========== */
+    .font2 {
+      --glow-color: #ffa500; /* 주황 */
+    }
+    .font2:hover {
+      --glow-color: #ff7f00;
+    }
+    .font2 h2, .font2 p {
+      font-family: '굴림', 'Gulim', sans-serif;
+    }
+    .font2 .glow-box {
+      border-radius: 15px;
+      padding: 20px;
+    }
+    .font2 .glow-box:hover {
+      background-color: #663300;
+    }
+
+    /* =========== 3) 바탕체 (Batang) =========== */
+    .font3 {
+      --glow-color: #ffff00; /* 노랑 */
+    }
+    .font3:hover {
+      --glow-color: #ffd700; /* 골드 */
+    }
+    .font3 h2, .font3 p {
+      font-family: '바탕', 'Batang', serif;
+    }
+    /* 원형 박스 예시 */
+    .font3 .glow-box {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .font3 .glow-box:hover {
+      background-color: #666600;
+    }
+
+    /* =========== 4) 돋움체 (Dotum) =========== */
+    .font4 {
+      --glow-color: #00ff00; /* 초록 */
+    }
+    .font4:hover {
+      --glow-color: #32cd32;
+    }
+    .font4 h2, .font4 p {
+      font-family: '돋움', 'Dotum', sans-serif;
+    }
+    /* 마름모 */
+    .font4 .glow-box {
+      width: 220px;
+      height: 220px;
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    /* 글자만 원위치 복원 */
+    .font4 .glow-text {
+      transform: rotate(-45deg);
+    }
+    .font4 .glow-box:hover {
+      background-color: #003300;
+    }
+
+    /* =========== 5) 맑은 고딕 (Malgun Gothic) =========== */
+    .font5 {
+      --glow-color: #00ffff; /* 하늘색 */
+    }
+    .font5:hover {
+      --glow-color: #40e0d0;
+    }
+    .font5 h2, .font5 p {
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+    }
+    /* 부채꼴 */
+    .font5 .glow-box {
+      width: 250px;
+      height: 250px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .font5 .glow-box:hover {
+      background-color: #004444;
+    }
+
+    /* =========== 6) HY견고딕 (예시) =========== 
+       (이 폰트는 특정 윈도우 환경에서만 있을 수도 있고, 
+        없으면 대체 폰트로 표시됨)
+    */
+    .font6 {
+      --glow-color: #0000ff; /* 파랑 */
+    }
+    .font6:hover {
+      --glow-color: #4169e1;
+    }
+    .font6 h2, .font6 p {
+      font-family: 'HY견고딕', 'Gulim', sans-serif;
+    }
+    .font6 .glow-box {
+      width: 220px;
+      height: 220px;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .font6 .glow-box:hover {
+      background-color: #000033;
+    }
+
+    /* =========== 7) PC에 설치된 다른 폰트1 (예: Arial) =========== */
+    .font7 {
+      --glow-color: #8a2be2; /* 보라 */
+    }
+    .font7:hover {
+      --glow-color: #9400d3;
+    }
+    .font7 h2, .font7 p {
+      /* Windows 기본 영문 폰트 예시 */
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .font7 .glow-box {
+      width: 220px;
+      height: 220px;
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .font7 .glow-box:hover {
+      background-color: #330033;
+    }
+
+    /* =========== 8) PC에 설치된 다른 폰트2 (예: Times New Roman) =========== */
+    .font8 {
+      --glow-color: #ff1493; /* 딥핑크 */
+    }
+    .font8:hover {
+      --glow-color: #ff69b4;
+    }
+    .font8 h2, .font8 p {
+      font-family: "Times New Roman", serif;
+    }
+    .font8 .glow-box {
+      width: 280px;
+      height: 150px;
+      border-radius: 50% / 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .font8 .glow-box:hover {
+      background-color: #660033;
+    }
+
+    /* =========== 9) 백묵체(임의 예시) 없으면 대체 =========== */
+    .font9 {
+      --glow-color: #b8860b;
+    }
+    .font9:hover {
+      --glow-color: #daa520;
+    }
+    .font9 h2, .font9 p {
+      font-family: '백묵체', 'Batang', serif; /* 없으면 바탕체로 */
+    }
+    .font9 .glow-box {
+      width: 260px;
+      height: 120px;
+      clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .font9 .glow-box:hover {
+      background-color: #442200;
+    }
+
+    /* =========== 10) (예시) Helvetica(윈도우엔 없는 경우 많음) =========== */
+    .font10 {
+      --glow-color: #f39c12;
+    }
+    .font10:hover {
+      --glow-color: #e67e22;
+    }
+    .font10 h2, .font10 p {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .font10 .glow-box {
+      border: 3px dashed #f39c12;
+      border-radius: 10px;
+      padding: 15px;
+      transition: border-color 0.3s;
+    }
+    .font10 .glow-box:hover {
+      background-color: #330f00;
+      border-color: #e67e22;
+    }
+
+    /* =========== 11) 사용자 임의폰트 (예: LocalFallback) =========== */
+    .font-local {
+      --glow-color: #2ecc71;
+    }
+    .font-local:hover {
+      --glow-color: #1abc9c;
+    }
+    .font-local h2, .font-local p {
+      font-family: 'LocalFallback', sans-serif;
+    }
+    .font-local .glow-box {
+      border-radius: 6px;
+    }
+    .font-local .glow-box:hover {
+      background-color: #0a372f;
+    }
+
+  </style>
+</head>
+<body>
+  <h1 class="title">Dw어커데미 - Windows 기본 한글 폰트 예시 (궁서 → 굴림 → 바탕 → 돋움 등)</h1>
+
+  <!-- 1) 궁서체 (Gungsuh) -->
+  <div class="font-sample font1">
+    <div class="glow-box">
+      <h2 class="glow-text">궁서체 제목</h2>
+      <p class="glow-text">이 문장은 궁서체(Gungsuh)로 적용되어 있습니다.</p>
+    </div>
+  </div>
+
+  <!-- 2) 굴림체 (Gulim) -->
+  <div class="font-sample font2">
+    <div class="glow-box">
+      <h2 class="glow-text">굴림체 제목</h2>
+      <p class="glow-text">이 문장은 굴림체(Gulim)로 적용되어 있습니다.</p>
+    </div>
+  </div>
+
+  <!-- 3) 바탕체 (Batang) -->
+  <div class="font-sample font3">
+    <div class="glow-box">
+      <h2 class="glow-text">바탕체 제목</h2>
+      <p class="glow-text">이 문장은 바탕체(Batang)로 적용되어 있습니다.</p>
+    </div>
+  </div>
+
+  <!-- 4) 돋움체 (Dotum) -->
+  <div class="font-sample font4">
+    <div class="glow-box">
+      <h2 class="glow-text">돋움체 제목</h2>
+      <p class="glow-text">이 문장은 돋움체(Dotum)로 적용되어 있습니다.</p>
+    </div>
+  </div>
+
+  <!-- 5) 맑은 고딕 (Malgun Gothic) -->
+  <div class="font-sample font5">
+    <div class="glow-box">
+      <h2 class="glow-text">맑은 고딕 제목</h2>
+      <p class="glow-text">이 문장은 맑은 고딕(Malgun Gothic)으로 적용</p>
+    </div>
+  </div>
+
+  <!-- 6) HY견고딕 (Windows 일부 버전) -->
+  <div class="font-sample font6">
+    <div class="glow-box">
+      <h2 class="glow-text">HY견고딕 제목</h2>
+      <p class="glow-text">이 문장은 HY견고딕 (없으면 굴림)으로 적용</p>
+    </div>
+  </div>
+
+  <!-- 7) Arial (영문 폰트 예시) -->
+  <div class="font-sample font7">
+    <div class="glow-box">
+      <h2 class="glow-text">Arial Title</h2>
+      <p class="glow-text">이 문장은 Arial, Helvetica 계열로 적용</p>
+    </div>
+  </div>
+
+  <!-- 8) Times New Roman (영문 폰트 예시) -->
+  <div class="font-sample font8">
+    <div class="glow-box">
+      <h2 class="glow-text">Times New Roman Title</h2>
+      <p class="glow-text">이 문장은 Times New Roman 계열로 적용</p>
+    </div>
+  </div>
+
+  <!-- 9) 백묵체 (없으면 바탕체) -->
+  <div class="font-sample font9">
+    <div class="glow-box">
+      <h2 class="glow-text">백묵체 제목</h2>
+      <p class="glow-text">이 문장은 백묵체(없으면 바탕체)로 적용</p>
+    </div>
+  </div>
+
+  <!-- 10) Helvetica (윈도우엔 없을 수도 있음) -->
+  <div class="font-sample font10">
+    <div class="glow-box">
+      <h2 class="glow-text">Helvetica Title</h2>
+      <p class="glow-text">이 문장은 Helvetica(없으면 Arial)로 적용</p>
+    </div>
+  </div>
+
+  <!-- 11) LocalFallback (사용자 정의 폰트) -->
+  <div class="font-sample font-local">
+    <div class="glow-box">
+      <h2 class="glow-text">LocalFallback</h2>
+      <p class="glow-text">이 문장은 LocalFallback 폰트(예시)로 적용</p>
+    </div>
+  </div>
+</body>
+</html>
